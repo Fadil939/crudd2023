@@ -1,0 +1,34 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  padding: 0.8rem;
+  font-size: 3.6em;
+}
+form .row {
+  padding: 1.4rem 8%;
+}
+form .row .col .from-label {
+  display: block;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+form .row .col input {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  color: rgb(83, 177, 146);
+}
+form .btn {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+}
+form .btn:hover {
+  background-color: salmon;
+  cursor: pointer;
+}
