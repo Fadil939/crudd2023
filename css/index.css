@@ -26,3 +26,7 @@ h1 {
   size: 3rem;
   display: inline-block;
 }
+.loader {
+  width: 100px;
+  position: absolute;
+}

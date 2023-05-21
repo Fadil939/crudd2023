@@ -30,11 +30,15 @@
       <a href="tambah.php">Tambah Data Buku!</a>
     </div>
     <br><br>
-    <form action="" method="post">
-      <input type="search" name="keyword" id="cari" size="70" autofocus placeholder="Masukan Pencarian....">
-      <button type="submit" name="cari">cari</button>
+
+
+      <form action="" method="post">
+      <input type="search" name="keyword" id="keyword" size="70" autofocus autocomplete="off" placeholder="Masukan Pencarian....">
+      <button type="submit" name="cari" id="tombol-cari" >cari</button>
+      <input type="image" src="../img/loader.gif" class="loader">
     </form>
     <br><br>
+    <div id="container">
     <table border="1" cellspacing="0" cellpadding="10" class="table">
 
       <tr>
@@ -63,11 +67,14 @@
       <?php  $i++;?>
       <?php  endforeach;?>
     </table>
+    </div>
+
         <br><br>
     <div class="link">
       <a href="logout.php" style="font-size: 2rem;" >Log Out</a>
     </div>
     <br><br>
-    
+    <script src="../js/jquery-3.7.0min.js"></script>
+    <script src="../js/script.js"></script>
   </body>
   </html>
