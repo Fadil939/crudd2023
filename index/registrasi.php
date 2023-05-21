@@ -1,4 +1,6 @@
 <?php 
+
+
 include "../functions/functions.php";
 
 
@@ -8,6 +10,7 @@ if( isset($_POST["register"]) ){
       echo "
           <script>
             alert('akun baru sudah dibuat');
+            document.location.href = 'index.php';
           </script>
         ";
   } else {

@@ -1,5 +1,11 @@
 <?php 
-require "../funtions/functions.php";
+  session_start();
+
+  if ( !isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+  } 
+require "../functions/functions.php";
 
 //ambil data id di url
 $id =$_GET["id"];

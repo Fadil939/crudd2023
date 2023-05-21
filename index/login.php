@@ -1,4 +1,10 @@
 <?php 
+session_start();
+if( isset($_SESSION["login"])){
+  header("Location: index.php");
+  exit;
+}
+
 include "../functions/functions.php";
 
 if( isset($_POST["login"]) ){
@@ -8,13 +14,15 @@ if( isset($_POST["login"]) ){
 
   $result =mysqli_query($conn ,"SELECT * FROM user WHERE username = '$username'");
 
-  //cek username
+    //cek username
   if( mysqli_num_rows($result) === 1){
 
     //cek password
     $row = mysqli_fetch_assoc($result);
     if( password_verify($password,$row["password"]));
-      header("Location: index.php");
+      //cek session 
+      $_SESSION["login"] = true;
+    header("Location: index.php");
       exit;    
   }
   $error = true;
@@ -30,9 +38,13 @@ if( isset($_POST["login"]) ){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="../css/registrasi.css">
+  <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
   <h1>Login</h1>
+  <div class="link">
+    <a href="registrasi.php">Registrasi Data Baru Disini!</a>
+  </div>
 
   <?php if( isset($error) ) :?>
       <p style="color: red; font-style: italic;">Username / Password salah</p>

@@ -1,4 +1,10 @@
-  <?php 
+  <?php
+  session_start();
+
+  if ( !isset($_SESSION["login"])){
+    header("Location: login.php");
+    exit;
+  } 
   include "../functions/functions.php";
 
   $buku = query("SELECT * FROM `tokobuku` ");
@@ -59,7 +65,7 @@
     </table>
         <br><br>
     <div class="link">
-      <a href="logout" style="font-size: 2rem;" >Log Out</a>
+      <a href="logout.php" style="font-size: 2rem;" >Log Out</a>
     </div>
     <br><br>
     
